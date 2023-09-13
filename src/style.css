@@ -47,6 +47,17 @@ h1 {
     font-weight: 30%;
 }
 
+[for="filter"] {
+  font-family: 'Hind Siliguri';
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 2px 5px;
+}
+
 @media (max-width: 768px) and (max-width: 1024px) {
     /* Aplicamos estilos específicos para tamaños de pantalla pequeños */
     .image1 {
