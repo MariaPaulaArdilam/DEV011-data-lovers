@@ -1,98 +1,269 @@
 .logo {
-    background: url('img/portada2.png');
-    height: 250px;
-    background-size: contain; 
-    background-repeat: repeat; /* para que la imagen se repita */
-     border-radius: 6px;
-    margin: 0.5px 1px -16px 1px;
-    border: 1px solid #92CFFC; /*agrege color al borde*/
-    display: flex;
-    align-items: center;
-    justify-content: center
+  background: url('img/portada2.png');
+  height: 250px;
+  background-size: contain;
+  background-repeat: repeat;
+  /* para que la imagen se repita */
+  border-radius: 6px;
+  margin: 0.5px 1px -16px 1px;
+  border: 1px solid #92CFFC;
+  /*agrege color al borde*/
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap'); /*tipo de letra*/
- 
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
+/*tipo de letra*/
 body {
-    font-family: 'Hind Siliguri', sans-serif;
+  background-color:#F5FAFF;
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
 
-.image1 {
-    height: auto;
-    width: 100%;
-    max-width: 310px;
-    margin: 16px auto;
-    ;
+.image1 { 
+  height: auto;
+  width: 100%;
+  max-width: 310px;
+  margin: 16px auto;
+  ;
 }
 
 .slogan {
-    background-color: black;
-    color: white;
-    /*margin: 16px 1px -50px 1px;*/
-    border-radius: 5px;
-    border: 1px solid black;
-    height: 40px;
-    font-size: 10px;
-    font-family: Hind Siliguri, sans-serif;
-    text-align: center;
-    padding: 1em;
-    display: flex; /*centrado en recuadro del texto*/
-    justify-content: center;
-    align-items: center;
+  background-color: black;
+  color: white;
+  /*margin: 16px 1px -50px 1px;*/
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 40px;
+  font-size: 10px;
+  font-family: Hind Siliguri, sans-serif;
+  text-align: center;
+  padding: 1em;
+  display: flex;
+  /*centrado en recuadro del texto*/
+  justify-content: center;
+  align-items: center;
 
 }
 
 h1 {
-    font-weight: 30%;
+  font-weight: 30%;
 }
 
-[for="filter"] {
-  font-family: 'Hind Siliguri';
-  font-size: 1rem;
-  padding-right: 10px;
-}
-
-select {
-  font-size: 0.9rem;
-  padding: 2px 5px;
-}
 
 @media (max-width: 768px) and (max-width: 1024px) {
-    /* Aplicamos estilos específicos para tamaños de pantalla pequeños */
-    .image1 {
-      max-width: 40%; /* Establecemos un ancho máximo proporcional */
-       
-    }
-  
-    .slogan {
-      padding: 1em; /* Incrementamos el espacio interno */
-    }
+  /* Aplicamos estilos específicos para tamaños de pantalla pequeños */
+  .image1 {
+    max-width: 40%;
+    /* Establecemos un ancho máximo proporcional */
+  }
+  .slogan {
+    padding: 1em;
+    /* Incrementamos el espacio interno */
+  }
+  h1 {
+    font-size: 100%;
+    /* Aumentamos el tamaño del texto para tamaños pequeños */
+    display: grid;
+    text-align: center;
+  }
+}
+@media (max-width: 390px) and (max-width: 768px) {
+  .logo {
+    max-width: 100%;
+    /* Establecemos un ancho máximo proporcional */
+    height: 150px;
+  }
+  .image1 {
+    max-width: 45%;
+    /* Establecemos un ancho máximo proporcional */
+  }
+  .slogan {
+    padding: 1em;
+    /* Incrementamos el espacio interno */
+  }
+  h1 {
+    font-size: 100%;
+    /* Aumentamos el tamaño del texto para tamaños pequeños */
+    display: grid;
+  }
+}
 
-    h1 {
-        font-size: 100%; /* Aumentamos el tamaño del texto para tamaños pequeños */
-        display: grid;
-        text-align: center;
-      }
+/*TARJETAS*/
+
+main{
+  padding: 10em;
+  display: block;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.movie_card{
+  position: relative;
+  display: block;
+  width: 800px;
+  height: 350px;
+  margin: 100px auto; 
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.4s;}
+
+  /*.movie_card:hover{ el ovimiento cuando se coloca encima el cursosr 
+    transform: scale(1.02);
+    transition: all 0.4s;
+  }*/
+
+  .info_section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+    z-index: 2;
+    border-radius: 10px;
   }
 
-  @media (max-width: 390px) and (max-width: 768px) {
-    .logo {
-        max-width: 100%; /* Establecemos un ancho máximo proporcional */
-        height: 150px; 
-      }
-      .image1 {
-        max-width: 45%; /* Establecemos un ancho máximo proporcional */
+  .movie_header {
+    position: relative;
+    padding: 25px;
+    height: 40%;
+  }
+
+  h1 {
+    color: #fff;
+    font-weight: 400;
+    font-family: Hind Siliguri;
+  }
+  h4 {
+    color: #9ac7fa;
+    font-weight: 400;
+    font-family: Hind Siliguri;
+  }
+  .minutes {
+    display: inline-block;
+    margin-top: 10px;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+  }
+  .type {
+    display: inline-block;
+    color: #cee4fd;
+    margin-left: 10px;
+  }
+
+  .locandina {
+    position: relative;
+    float: left;
+    margin-right: 20px;
+    height: 180px;
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+  }
+  .movie_desc {
+    padding: 25px;
+    height: 50%;
+  }
+
+  .text {
+    color: #cfd6e1;
+    font-family: Hind Siliguri;
+  }
+  .movie_social {
+    height: 20%;
+    color:black;
+    padding-bottom: 20px;
+    box-sizing: 1em;
     
-      }
-      .slogan {
-        padding: 1em; /* Incrementamos el espacio interno */
-      }
-  
-      h1 {
-          font-size: 100%; /* Aumentamos el tamaño del texto para tamaños pequeños */
-          display: grid;
-               
-        }
+    
   }
- 
+  ul {
+    list-style: none;
+    padding: 1em;
+  }
+  .material-icons {
+    padding: 0.3em;
+    display: inline-block;
+    background-color:#38A7FA ;
+    transition: color 0.3s;
+    transition-delay: 0.15s;
+    margin: 0 10px;
+    border-radius: 0.3em;
+    border: white 0.3em;
+    font-family:Hind Siliguri ;
+    opacity: 80%;
+    font-weight: bold;
+  }
+
+  .blur_back{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 100%; right: 0;
+    background-size: cover;
+    border-radius: 11px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .movie_header{
+      width: 60%;
+    }
+    
+    .movie_desc{
+      width: 50%;
+    }
+    
+    .info_section{
+      background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
+    }
+    
+    .blur_back{
+      width: 80%;
+      background-position: -100% 10% !important;  
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .movie_card{
+      width: 95%;
+      margin: 70px auto; 
+      min-height: 350px;
+      height: auto;
+    }
+    
+    .blur_back{
+      width: 100%;
+      background-position: 50% 50% !important;  
+    }
+    
+    .movie_header{
+      width: 100%;
+      margin-top: 85px;
+    }
+    
+    .movie_desc{
+      width: 100%;
+    }
+    
+    .info_section{
+      background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+      display: inline-grid;
+    }
+  }
+
+  
+#tomb{
+  box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
+  &:hover{
+    box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
+  }
+}
+
+.tomb_back{
+  background: url("https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg");
+  background-size: cover;
+  width: 50%;
+}
