@@ -1,70 +1,90 @@
 .logo {
-    background: url('img/portada2.png');
-    height: 250px;
-    background-size: contain; 
-    background-repeat: repeat; /* para que la imagen se repita */
-     border-radius: 6px;
-    margin: 0.5px 1px -16px 1px;
-    border: 1px solid #92CFFC; /*agrege color al borde*/
-    display: flex;
-    align-items: center;
-    justify-content: center
+  background: url('img/portada2.png');
+  height: 250px;
+  background-size: contain; 
+  background-repeat: repeat; /* para que la imagen se repita */
+   border-radius: 6px;
+  margin: 0.5px 1px -16px 1px;
+  border: 1px solid #92CFFC; /*agrege color al borde*/
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap'); /*tipo de letra*/
- 
+
 body {
-    font-family: 'Hind Siliguri', sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
 
 .image1 {
-    height: auto;
-    width: 100%;
-    max-width: 310px;
-    margin: 16px auto;
-    ;
+  height: auto;
+  width: 100%;
+  max-width: 310px;
+  margin: 16px auto;
+  ;
 }
 
 .slogan {
-    background-color: black;
-    color: white;
-    /*margin: 16px 1px -50px 1px;*/
-    border-radius: 5px;
-    border: 1px solid black;
-    height: 40px;
-    font-size: 10px;
-    font-family: Hind Siliguri, sans-serif;
-    text-align: center;
-    padding: 1em;
-    display: flex; /*centrado en recuadro del texto*/
-    justify-content: center;
-    align-items: center;
+  background-color: black;
+  color: white;
+  /*margin: 16px 1px -50px 1px;*/
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 40px;
+  font-size: 10px;
+  font-family: Hind Siliguri, sans-serif;
+  text-align: center;
+  padding: 1em;
+  display: flex; /*centrado en recuadro del texto*/
+  justify-content: center;
+  align-items: center;
 
 }
 
 h1 {
-    font-weight: 30%;
+  font-weight: 30%;
 }
 
 [for="filter"] {
-  font-family: 'Hind Siliguri';
-  font-size: 1rem;
-  padding-right: 10px;
+font-family: 'Hind Siliguri';
+font-size: 1rem;
+padding-right: 10px;
 }
 
 select {
-  font-size: 0.9rem;
-  padding: 2px 5px;
+font-size: 0.9rem;
+padding: 2px 5px;
 }
 
 @media (max-width: 768px) and (max-width: 1024px) {
-    /* Aplicamos estilos específicos para tamaños de pantalla pequeños */
-    .image1 {
-      max-width: 40%; /* Establecemos un ancho máximo proporcional */
-       
+  /* Aplicamos estilos específicos para tamaños de pantalla pequeños */
+  .image1 {
+    max-width: 40%; /* Establecemos un ancho máximo proporcional */
+     
+  }
+
+  .slogan {
+    padding: 1em; /* Incrementamos el espacio interno */
+  }
+
+  h1 {
+      font-size: 100%; /* Aumentamos el tamaño del texto para tamaños pequeños */
+      display: grid;
+      text-align: center;
     }
+}
+
+@media (max-width: 390px) and (max-width: 768px) {
+  .logo {
+      max-width: 100%; /* Establecemos un ancho máximo proporcional */
+      height: 150px; 
+    }
+    .image1 {
+      max-width: 45%; /* Establecemos un ancho máximo proporcional */
   
+    }
     .slogan {
       padding: 1em; /* Incrementamos el espacio interno */
     }
@@ -72,27 +92,7 @@ select {
     h1 {
         font-size: 100%; /* Aumentamos el tamaño del texto para tamaños pequeños */
         display: grid;
-        text-align: center;
+             
       }
-  }
-
-  @media (max-width: 390px) and (max-width: 768px) {
-    .logo {
-        max-width: 100%; /* Establecemos un ancho máximo proporcional */
-        height: 150px; 
-      }
-      .image1 {
-        max-width: 45%; /* Establecemos un ancho máximo proporcional */
-    
-      }
-      .slogan {
-        padding: 1em; /* Incrementamos el espacio interno */
-      }
-  
-      h1 {
-          font-size: 100%; /* Aumentamos el tamaño del texto para tamaños pequeños */
-          display: grid;
-               
-        }
-  }
+}
  
