@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width"><meta> <!--ccon el atributo viewport se utiliza para configurar cómo se debe ajustar y escalar el contenido en dispositivos móviles y es fundamental para que las Media Queries y la adaptación de tu sitio web a diferentes tamaños de pantalla funcionen correctamente
-    <title>Data Lovers</title> --> 
+  <meta name="viewport" content="width=device-width">
+  <meta> <!--ccon el atributo viewport se utiliza para configurar cómo se debe ajustar y escalar el contenido en dispositivos móviles y es fundamental para que las Media Queries y la adaptación de tu sitio web a diferentes tamaños de pantalla funcionen correctamente
+    <title>Data Lovers</title> -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -20,7 +21,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
       </h1>
-     <p> El viaje de Chihiro</p>
+      <p> El viaje de Chihiro</p>
     </div>
 
   </header>
@@ -42,10 +43,50 @@
 
   <button calss="top5"> Top 5</button>
 
-  <button id="clear" onclick="">Limpiar</button> 
+  <button id="clear" onclick="">Limpiar</button>
+
+  <main>
+       <div class="movie_card" id="root">
+        <section id="root2">
+  
+        </section>
+         <div class="info_section">
+           <div class="movie_header">
+             <img class="images" src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg"/>
+            <h2 class="name-movie">El castillo en el cielo</h2>
+            <h4 class="director">Director: Hayao Miyazaki</h4>
+            <h4 class="producer">Productor: Isao Takahata </h4>
+            <br>
+            <h4 class="year">2018</h4>
+            <div class="movie_buttons">
+              <ul> 
+                <li class="material-buttons">Personajes</li>
+                <li class="material-buttons">Vehículo</li>
+                <li class="material-buttons">Locación</li>
+              </ul>
+            </div>
+          </div>
+          <div class="movie_desc">
+            <p class="description">
+              Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she finds herself on the island where her father disappeared.
+            </p>
+          </div>
+        </div> 
+        <div class="images_people root_img"></div>
+       
+      </div>
+      
+
+      
+
+  </main>
+
+
+
+
+
 
   <script src="main.js" type="module"></script>
-
 
 </body>
 
