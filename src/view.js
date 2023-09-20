@@ -6,33 +6,39 @@ export const renderItems = (data) => {
   data.forEach(film => {
     //vamos a crear un elemento div 
     const tarjeta = document.createElement('div');
-  tarjeta.innerHTML= `<div class="info_section">
-    <div class="movie_header">
-      <img class="images" src="${film.poster}"/>
-      <h2 class="name-movie">${film.title}</h2>
-      <h4 class="director">Director: ${film.director}</h4>
-      <h4 class="producer">Productor: ${film.producer} </h4>
-      <br>
-      <h4 class="year">${film.release_date}</h4>
-      <div class="movie_buttons">
-        <ul>
-          <li class="material-buttons">Personajes</li>
-          <li class="material-buttons">Vehículo</li>
-          <li class="material-buttons">Locación</li>
-        </ul>
-      </div>
-    <div class="movie_desc">
-      <p class="description"> ${film.description}</p>
-      <img class="images_people" src="${film.img1}"/>
-    </div>
-    
-  </div>
-  
-</div>`;
-   div.appendChild(tarjeta);
-}); 
-return div;
+    tarjeta.innerHTML = `<ul class="movie_card" id="root" itemscope itemtype="films">
+<div class="info_section">
+  <li><img class="imagen"
+      src="${film.poster}" />
+  </li>
+  <li >
+  <img class="imagen_people" src="${film.img1}"/>
+</li>
+  <li class="name-movie" itemprop="name">
+    <h2>${film.title}</h2>
+  </li>
+  <li itemprop="director">
+    <h4>${film.director}</h4>
+  </li>
+  <li itemprop="producer">
+    <h4>${film.producer}</h4>
+  </li>
+  <li class="year" itemprop="release_date">${film.release_date}</li>
+  <ul class="movie_social">
+    <li class="material-button">Personajes</li>
+    <li class="material-button">Vehículo</li>
+    <li class="material-button">Locación</li>
+  </ul>
+  <ul class="movie_desc">
+    <li class="description" itemprop="description">
+    ${film.description}
+    </li>
+  </ul>
+ 
+</div>
+</ul>
+`;
+    div.appendChild(tarjeta);
+  });
+  return div;
 }
-
-
-

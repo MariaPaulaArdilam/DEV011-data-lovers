@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <title>DATA-LOVER</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <meta> <!--ccon el atributo viewport se utiliza para configurar cómo se debe ajustar y escalar el contenido en dispositivos móviles y es fundamental para que las Media Queries y la adaptación de tu sitio web a diferentes tamaños de pantalla funcionen correctamente
@@ -25,59 +26,69 @@
     </div>
 
   </header>
-  <label for="filter">Filtrar Por</label>
 
-  <select name="Filter" id="filter-select">
-    <option value="">Escoge una opción</option>
+  
+  
+  <main>
+
+    <label for="filter" class="filt"></label>
+  <select name="Filter" class="filter-select">
+    <option value="">Filtrar por</option>
     <option value="director">Director</option>
     <option value="año">Año</option>
   </select>
-
-  <label for="filter">Ordenar Por</label>
-
-  <select name="Filter" id="filter-select">
-    <option value="">Escoge una opción</option>
+<i></i>
+  
+  <label for="filter"></label>
+  <select name="Filter" class="filter-select">
+    
+    <option value="">Ordenar por</option>
     <option value="A-Z">A-Z</option>
     <option value="Z-A">Z-A</option>
   </select>
-
-  <button calss="top5"> Top 5</button>
-
-  <button id="clear" onclick="">Limpiar</button>
-
-  <main>
+  <i></i>
   
-       <div class="movie_card" id="root"> 
-       <!--  <div class="info_section">
-          <div class="images_people root_img"></div>
-           <div class="movie_header">
-             <img class="images" src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg"/>
-            <h2 class="name-movie">El castillo en el cielo</h2>
-            <h4 class="director">Director: Hayao Miyazaki</h4>
-            <h4 class="producer">Productor: Isao Takahata </h4>
-            <br>
-            <h4 class="year">2018</h4>
-            <div class="movie_buttons">
-              <ul> 
-                <li class="material-buttons">Personajes</li>
-                <li class="material-buttons">Vehículo</li>
-                <li class="material-buttons">Locación</li>
-             </ul> 
-            </div>
-          
-          </div>
-          <div class="movie_desc">
-            <p class="description">
-              Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she finds herself on the island where her father disappeared.
-            </p>
-            <img class="images_people"/>
-          </div>
-          
-        </div> -->
-      
-       
-     
-    </div>
+  <!-- <button calss="top5"> Top 5</button>
+
+  <button id="clear" onclick="">Limpiar</button> -->
+
+    <ul>
+    <li class="movie_card" id="root"  itemtype="film"> </li>
+     <!-- <div class="info_section">
+        <li><img class="imagen"
+            src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg" />
+        </li>
+        <li class="name-movie" itemprop="title">
+          <h2>NOMBRE DE LA PELICULA</h2>
+        </li>
+        <li itemprop="director">
+          <h4>DIRECTOR</h4>
+        </li>
+        <li itemprop="producer">
+          <h4>PRODUCTOR</h4>
+        </li>
+        <li class="year" itemprop="release_date">Año</li>
+        <ul class="movie_buttons">
+          <li class="material-button">Personajes</li>
+          <li class="material-button">Vehículo</li>
+          <li class="material-button">Locación</li>
+        </ul>
+        <ul class="movie_desc">
+          <li class="description" itemprop="description">
+            Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits
+            when she finds herself on the island where her father disappeared.
+          </li>
+        </ul>
+
+        <li >
+          <img class="imagen_people" src="https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg"/>
+        </li>
+      </div> -->
+
+    </ul>
+
+
+
   </main>
 
 
