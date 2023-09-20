@@ -1882,7 +1882,7 @@ export default {
       "producer": "Toshio Suzuki",
       "poster": "https://m.media-amazon.com/images/M/MV5BZDY3ZGI0ZDAtMThlNy00MzAxLTg4YjAtNjkwYTkxNmQ4MjdlXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
       "release_date": "2010",
-      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/0/04/Arrietty.jpg",
+      "img1": "https://static.wikia.nocookie.net/studio-ghibli/images/0/04/Arrietty.jpg",
       "rt_score": "95",
       "people": [
         {
@@ -2000,7 +2000,7 @@ export default {
       "producer": "Toshio Suzuki",
       "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/b/bb/From_Up_on_Poppy_Hill.jpg",
       "release_date": "2011",
-      "img": "https://static.wikia.nocookie.net/studio-ghibli/images/9/93/Umi_Matsuzaki.jpg",
+      "img1": "https://static.wikia.nocookie.net/studio-ghibli/images/9/93/Umi_Matsuzaki.jpg",
       "rt_score": "83",
       "people": [
         {
