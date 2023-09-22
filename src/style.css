@@ -293,14 +293,14 @@ ul {
 
 /*BOTONES*/
 
-.filter {
-  font-family:Hind Siliguri ;
+#filter {
+  font-family:Hind Siliguri;
   font-size: 1.3em;
-  margin: 0em;
-  display: flex;
-  justify-content: 10%;
-  align-items: center;
-  top: 0;
+  margin: 0.5em;
+  top: 2em;
+  display: inline-block; /* Los elementos estarán en línea */
+  margin-right: 20px;
+
  
 }
 
@@ -309,6 +309,7 @@ select[name="Filter"] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
   display: inline-block;
+  margin: 1em;
 	width: 100%;
 	cursor: pointer;
   	padding: 7px 10px;
@@ -327,7 +328,7 @@ select[name="Filter"] {
     border-radius: 12px;
     position: relative;
     transition: all 0.25s ease;
-  left: 30%;
+  left: 25%;
 
 
 }
@@ -336,13 +337,13 @@ select[name="Filter"] {
 
 
 
-select{
-  max-width: 250px;
+ select{
+  max-width: 10em;
 	position: relative;
-}
+} 
 
   
 
-select:hover i{
+/* select:hover i{
 	margin-top: 3px;
-}
+} */
