@@ -4,6 +4,7 @@
 import fs from 'fs';
 import { renderItems } from '../../src/view.js';
 import { data as fakeData } from '../../test/data.js';
+import { Console } from 'console';
 
 const html = fs.readFileSync('./src/index.html', 'utf-8');
 document.body.innerHTML = html;
@@ -98,7 +99,7 @@ describe('Uso de HTML semántico', () => {
     beforeEach(()=>{
       lis = document.querySelectorAll('#root > ul > li');
     });
-
+    console.log(lis, "hola" )
     it('La aplicacion usa un <ul> con <li> para los elementos de data', () => {
       expect(lis.length).toBeGreaterThan(0);
     });

@@ -218,7 +218,7 @@ ul {
   font-weight: bold;
 }
 
-.blur_back {
+.imagen_people {
   position: absolute;
   top: 0;
   z-index: 1;
@@ -293,17 +293,23 @@ ul {
 
 /*BOTONES*/
 
-label {
-  font-family:Hind Siliguri ;
+#filter {
+  font-family:Hind Siliguri;
   font-size: 1.3em;
   margin: 0.5em;
+  top: 2em;
+  display: inline-block; /* Los elementos estarán en línea */
+  margin-right: 20px;
+
+ 
 }
 
-select {
+select[name="Filter"] {
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
   display: inline-block;
+  margin: 1em;
 	width: 100%;
 	cursor: pointer;
   	padding: 7px 10px;
@@ -316,15 +322,13 @@ select {
 	font-size: 1.1em;
   font-weight: bold;
 	color: #0c0c0c;
-
-	font-family: 
-	Hind Siliguri, sans-serif;
+	font-family: Hind Siliguri, sans-serif;
 	border:1px solid #0383b6;
   box-shadow: 3px 3px 8px  rgb(0, 36, 156);
     border-radius: 12px;
     position: relative;
     transition: all 0.25s ease;
-  left: 30%;
+  left: 25%;
 
 
 }
@@ -333,13 +337,13 @@ select {
 
 
 
-select{
-  max-width: 250px;
+ select{
+  max-width: 10em;
 	position: relative;
-}
+} 
 
   
 
-select:hover i{
+/* select:hover i{
 	margin-top: 3px;
-}
+} */

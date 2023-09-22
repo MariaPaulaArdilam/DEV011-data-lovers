@@ -27,74 +27,44 @@
 
   </header>
 
-  
-  
-  <main>
 
-    <label for="filter" class="filt"></label>
-  <select name="Filter" class="filter-select">
-    <option value="">Filtrar por</option>
-    <option value="director">Director</option>
-    <option value="año">Año</option>
+  <label for="" >Filtrar por director</label>
+  <select data-testid="select-filter" name="Filter">Director
+    <option value="HayaoMiyazaki">Hayao Miyazaki</option>
+    <option value="IsaoTakahata">Isao Takahata</option>
+    <option value="YoshifumiKondō">Yoshifumi Kondō</option>
+    <option value="HiroyukiMorita">Hiroyuki Morita</option>
+    <option value="GorōMiyazaki">Gorō Miyazaki</option>
+    <option value="HiromasaYonebayashi">Hiromasa Yonebayashi</option>
   </select>
-<i></i>
-  
-  <label for="filter"></label>
-  <select name="Filter" class="filter-select">
-    
+  <i></i>
+
+  <label for="" ></label>
+  <select data-testid="select-filter" name="Filter">
+
     <option value="">Ordenar por</option>
     <option value="A-Z">A-Z</option>
     <option value="Z-A">Z-A</option>
   </select>
   <i></i>
-  
-  <!-- <button calss="top5"> Top 5</button>
 
-  <button id="clear" onclick="">Limpiar</button> -->
+<button calss="top5"> Top 5</button>
 
-    <ul>
-    <li class="movie_card" id="root"  itemtype="film"> </li>
-     <!-- <div class="info_section">
-        <li><img class="imagen"
-            src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg" />
-        </li>
-        <li class="name-movie" itemprop="title">
-          <h2>NOMBRE DE LA PELICULA</h2>
-        </li>
-        <li itemprop="director">
-          <h4>DIRECTOR</h4>
-        </li>
-        <li itemprop="producer">
-          <h4>PRODUCTOR</h4>
-        </li>
-        <li class="year" itemprop="release_date">Año</li>
-        <ul class="movie_buttons">
-          <li class="material-button">Personajes</li>
-          <li class="material-button">Vehículo</li>
-          <li class="material-button">Locación</li>
-        </ul>
-        <ul class="movie_desc">
-          <li class="description" itemprop="description">
-            Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits
-            when she finds herself on the island where her father disappeared.
-          </li>
-        </ul>
+<button data-testid="select-filter" onclick="">Limpiar</button> 
 
-        <li >
-          <img class="imagen_people" src="https://static.wikia.nocookie.net/studio-ghibli/images/8/8b/Pazu.jpg"/>
-        </li>
-      </div> -->
+  <main>
 
-    </ul>
+
+    <div class="movie_card" id="root"> </div>
+
+    
+
+    
 
 
 
   </main>
-
-
-
-
-
+  <footer></footer>
 
   <script src="main.js" type="module"></script>
 
