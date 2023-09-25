@@ -1,7 +1,7 @@
 // import { example } from './dataFunctions.js';
 import { renderItems } from "./view.js";
 import { filterData } from "./dataFunctions.js";
-import {sortData} from "./dataFunctions.js";
+import { sortData } from "./dataFunctions.js";
 
 // import data from './data/lol/lol.js';
 import data from "/data/ghibli/ghibli.js";
@@ -18,9 +18,14 @@ const selectFilter = document.getElementsByName("Filter")[0];
 selectFilter.addEventListener("change", () => {
   const resulFilter = filterData(datafilm, "director", selectFilter.value);
   console.log(resulFilter);
-  root.innerHTML = ''
-  root.appendChild(renderItems(resulFilter))
+  root.innerHTML = "";
+  root.appendChild(renderItems(resulFilter));
 });
 
 const dataorden = data.films;
-const sortData = document.getElementsByName("alphabet")
+const selectSort = document.getElementsByName("alphabet")[0];
+
+selectSort.addEventListener("change", () => {
+  const resultsort = sortData(dataorden, "title", selectSort.value);
+  console.log(resultsort);
+});

@@ -19,8 +19,10 @@ export const filterData = (data, filterBy, value) => {
   return filter;
 };
 
-export const sortData = (data, sortBy, sortOrden)=>{
+export const sortData = (data, sortBy, value)=>{
+  console.log("data", data);
+  console.log("sortBy", sortBy);
+  console.log("value", value);
 
-return[]
 
 };
