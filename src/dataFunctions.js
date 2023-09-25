@@ -12,5 +12,15 @@ export const filterData = (data, filterBy, value) => {
   console.log("data", data);
   console.log("filterBy", filterBy);
   console.log("value", value);
-  return 1;
+
+  const filter = data.filter((element) => {
+    return element[filterBy] == value;
+  });
+  return filter;
+};
+
+export const sortData = (data, sortBy, sortOrden)=>{
+
+return[]
+
 };
