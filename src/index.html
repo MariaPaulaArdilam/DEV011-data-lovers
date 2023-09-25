@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>DATA-LOVER</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <meta> <!--ccon el atributo viewport se utiliza para configurar cómo se debe ajustar y escalar el contenido en dispositivos móviles y es fundamental para que las Media Queries y la adaptación de tu sitio web a diferentes tamaños de pantalla funcionen correctamente
+  <head>
+    <title>DATA-LOVER</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta />
+    <!--ccon el atributo viewport se utiliza para configurar cómo se debe ajustar y escalar el contenido en dispositivos móviles y es fundamental para que las Media Queries y la adaptación de tu sitio web a diferentes tamaños de pantalla funcionen correctamente
     <title>Data Lovers</title> -->
-  <link rel="stylesheet" href="style.css" />
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-  <header>
-    <div class="logo">
-      <img src="img/LogoFinal.png" alt="StudioGhibli" class="image1" opacity="10%" -->
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="img/LogoFinal.png"
+          alt="StudioGhibli"
+          class="image1"
+          opacity="10%"
+          --
+        />
+      </div>
+
+      <div class="slogan">
+        <h1>
+          「限界は 3 つあります。空、想像力、そして自分自身です。」/ “ Los
+          límites son tres: el cielo, tu imaginación y tu misma.”
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap"
+            rel="stylesheet"
+          />
+        </h1>
+        <p>El viaje de Chihiro</p>
+      </div>
+    </header>
+    <div class="container0">
+      <label for=""></label>
+      <select data-testid="select-filter" name="Filter">
+        Director
+        <option value="">Filtrar por director</option>
+        <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+        <option value="Isao Takahata">Isao Takahata</option>
+        <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+        <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+        <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+        <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+      </select>
+      <i></i>
+
+      <label for=""></label>
+      <select data-testid="select-sort" name="alphabet">
+        <option value="">Ordenar por</option>
+        <option value="asc">A-Z</option>
+        <option value="desc">Z-A</option>
+      </select>
+      <i></i>
     </div>
 
-    <div class="slogan">
-      <h1>「限界は 3 つあります。空、想像力、そして自分自身です。」/ “ Los límites son tres: el cielo, tu imaginación y tu misma.”
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
-      </h1>
-      <p> El viaje de Chihiro</p>
+    <div class="container">
+      <button class="top5">Top 5</button>
+
+      <button data-testid="select-filter" onclick="">Limpiar</button>
     </div>
 
-  </header>
+    <main>
+      <div class="movie_card" id="root"></div>
+    </main>
+    <footer></footer>
 
-
-  <label for="" ></label>
-  <select data-testid="select-filter" name="Filter">Director
-    <option value="">Filtrar por director</option>
-    <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-    <option value="Isao Takahata">Isao Takahata</option>
-    <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
-    <option value="Hiroyuki Morita">Hiroyuki Morita</option>
-    <option value="Gorō Miyazaki">Gorō Miyazaki</option>
-    <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
-  </select>
-  <i></i>
-
-  <label for="" ></label>
-  <select data-testid="select-sort" name="alphabet">
-
-    <option value="">Ordenar por</option>
-    <option value="asc">A-Z</option>
-    <option value="desc">Z-A</option>
-  </select>
-  <i></i>
-
-<button class="top5"> Top 5</button>
-
-<button data-testid="select-filter" onclick="">Limpiar</button> 
-
-  <main>
-
-
-    <div class="movie_card" id="root"> </div>
-
-    
-
-    
-
-
-
-  </main>
-  <footer></footer>
-
-  <script src="main.js" type="module"></script>
-
-</body>
-
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
