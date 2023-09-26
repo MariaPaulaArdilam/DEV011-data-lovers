@@ -6,9 +6,9 @@ export const renderItems = (data) => {
   data.forEach((film) => {
     //vamos a crear un elemento div
     const tarjeta = document.createElement("li");
-    tarjeta.classList = 'movie_card';
-    tarjeta.setAttribute ('itemscope',"")
-    tarjeta.setAttribute ('itemtype',"film")
+    tarjeta.classList = "movie_card";
+    tarjeta.setAttribute("itemscope", "");
+    tarjeta.setAttribute("itemtype", "film");
     tarjeta.innerHTML = `
       <div class="info_section" >
         <img class="imagen"
@@ -25,6 +25,8 @@ export const renderItems = (data) => {
         
         <h4 itemprop="producer">
           ${film.producer}</h4>
+        <h4 itemprop="rt_score">Score:
+          ${film.rt_score}</h4>
        
         <h4 class="year" itemprop="release_date">${film.release_date}</h4>
         <ul class="movie_social">
@@ -42,7 +44,3 @@ export const renderItems = (data) => {
   });
   return ul;
 };
-
-
-
-

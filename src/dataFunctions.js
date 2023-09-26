@@ -19,10 +19,37 @@ export const filterData = (data, filterBy, value) => {
   return filter;
 };
 
-export const sortData = (data, sortBy, value)=>{
+export let sortData = (data, sortBy, sortOrden)=>{
   console.log("data", data);
   console.log("sortBy", sortBy);
-  console.log("value", value);
+  console.log("sortOrden", sortOrden );
 
+  const ordendata = data
+   ordendata.sort ((a,b) => {
 
+    if (sortOrden == 'asc') {
+      if (a[sortBy] < b[sortBy]){
+        return -1;
+      }
+       
+      if (a[sortBy] > b[sortBy]){
+        return 1;
+      } 
+  
+      
+    } else if (sortOrden == 'desc') {
+      if (a[sortBy] > b[sortBy]){
+        return -1;
+      }
+       
+      if (a[sortBy] < b[sortBy]){
+        return 1;
+      } 
+  
+    }
+    
+  })
+  
+  return ordendata;
+  
 };
