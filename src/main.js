@@ -26,6 +26,19 @@ const dataorden = data.films;
 const selectSort = document.getElementsByName("alphabet")[0];
 
 selectSort.addEventListener("change", () => {
-  const resultsort = sortData(dataorden, "title", selectSort.value);
+  let resultsort = sortData(dataorden, "title", selectSort.value);
+  root.innerHTML=""
+  root.appendChild(renderItems(resultsort))
   console.log(resultsort);
 });
+
+//Función Boton limpiar.
+
+const ResetBotton = document.querySelector("button[data-testid='select-filter']");
+ResetBotton.addEventListener('click',() =>{
+  window.location.reload(true);
+selectFilter.selectedIndex = 0;
+selectSort.selectedIndex = 0;
+ });
+
+
