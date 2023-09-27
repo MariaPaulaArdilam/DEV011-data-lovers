@@ -13,6 +13,7 @@ export const filterData = (data, filterBy, value) => {
   console.log("filterBy", filterBy);
   console.log("value", value);
 
+  
   const filter = data.filter((element) => {
     return element[filterBy] == value;
   });
@@ -24,8 +25,7 @@ export let sortData = (data, sortBy, sortOrden)=>{
   console.log("sortBy", sortBy);
   console.log("sortOrden", sortOrden );
 
-  const ordendata = data
-   ordendata.sort ((a,b) => {
+  const ordendata = data.sort ((a,b) => {
 
     if (sortOrden == 'asc') {
       if (a[sortBy] < b[sortBy]){
@@ -53,3 +53,5 @@ export let sortData = (data, sortBy, sortOrden)=>{
   return ordendata;
   
 };
+
+//.map
