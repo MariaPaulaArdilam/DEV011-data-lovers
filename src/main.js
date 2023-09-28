@@ -14,18 +14,26 @@ root.appendChild(renderItems(data.films));
 
 const datafilm = data.films;
 const selectFilter = document.getElementsByName("Filter")[0];
-
+let resulFilter;
 selectFilter.addEventListener("change", () => {
-  const resulFilter = filterData(datafilm, "director", selectFilter.value);
+  resulFilter = filterData(datafilm, "director", selectFilter.value);
   console.log(resulFilter);
   root.innerHTML = "";
   root.appendChild(renderItems(resulFilter));
+
 });
 
-const dataorden = data.films;
+
 const selectSort = document.getElementsByName("alphabet")[0];
 
 selectSort.addEventListener("change", () => {
+  let dataorden = null 
+  if (resulFilter){
+    dataorden = resulFilter
+  }
+  else{
+    dataorden = data.films
+  }
   let resultsort = sortData(dataorden, "title", selectSort.value);
   root.innerHTML=""
   root.appendChild(renderItems(resultsort))
@@ -40,5 +48,3 @@ ResetBotton.addEventListener('click',() =>{
 selectFilter.selectedIndex = 0;
 selectSort.selectedIndex = 0;
  });
-
-

@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
 }
-
+/*tipografia*/
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap");
 
 /*tipo de letra*/
@@ -35,7 +35,7 @@ body {
   border-radius: 5px;
   border: 1px solid black;
   height: 40px;
-  font-size: 10px;
+  font-size: 0.5em;
   font-family: Hind Siliguri, sans-serif;
   text-align: center;
   padding: 1em;
@@ -49,54 +49,10 @@ h1 {
   font-weight: 30%;
 }
 
-@media (max-width: 768px) and (max-width: 1024px) {
-  /* Aplicamos estilos específicos para tamaños de pantalla pequeños */
-  .image1 {
-    max-width: 40%;
-    /* Establecemos un ancho máximo proporcional */
-  }
-
-  .slogan {
-    padding: 1em;
-    /* Incrementamos el espacio interno */
-  }
-
-  h1 {
-    font-size: 100%;
-    /* Aumentamos el tamaño del texto para tamaños pequeños */
-    display: grid;
-    text-align: center;
-  }
-}
-
-@media (max-width: 390px) and (max-width: 768px) {
-  .logo {
-    max-width: 100%;
-    /* Establecemos un ancho máximo proporcional */
-    height: 150px;
-  }
-
-  .image1 {
-    max-width: 45%;
-    /* Establecemos un ancho máximo proporcional */
-  }
-
-  .slogan {
-    padding: 1em;
-    /* Incrementamos el espacio interno */
-  }
-
-  h1 {
-    font-size: 100%;
-    /* Aumentamos el tamaño del texto para tamaños pequeños */
-    display: grid;
-  }
-}
-
 /*TARJETAS*/
 
 main {
-  padding: 2em;
+  padding: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,10 +63,12 @@ main {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 .movie_card{
   margin: 3em 1em 1em 1em;
+  overflow:hidden;
 
 }
 
@@ -123,13 +81,25 @@ main {
   box-shadow: 1px 1px 1px px rgba(19, 160, 134, 0.6);
   
 }
+.imagen_people {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  background-size: cover;
+  border-radius: 11px;
+  background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+  display: inline-grid;
+  background-position: -80% 10% !important;
+  overflow:hidden;
+}
 
-
-
-/*.movie_card:hover{ el ovimiento cuando se coloca encima el cursosr 
+/* .movie_card:hover{ /*el ovimiento cuando se coloca encima el cursosr 
     transform: scale(1.02);
     transition: all 0.4s;
-  }*/
+  } */
 
 .info_section {
   position: relative;
@@ -142,13 +112,6 @@ main {
   background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
 }
 
-.movie_header {
-  display: flexbox;
-  position: fixed;
-  top: 0;
-  padding: 25px;
-  height: 40%;
-}
 
 h2 {
   color: #fff;
@@ -171,12 +134,6 @@ h4 {
   border: 1px solid rgba(255, 255, 255, 0.13);
 }
 
-.type {
-  display: inline-block;
-  color: #cee4fd;
-  margin-left: 10px;
-}
-
 .imagen {
   position: relative;
   float: left;
@@ -185,30 +142,28 @@ h4 {
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
 }
 
-.movie_desc {
-  padding: 20px;
-  height: 50%;
-  width: 50%;
-}
 
 .description {
+  padding: 20px;
+  height: 50%;
+  width: 65%;
   color: #cfd6e1;
   font-family: Hind Siliguri;
+  font-size: 1em;
 }
 
-.movie_buttons {
-  height: 20%;
-  color: black;
-  padding-bottom: 20px;
-  box-sizing: 1em;
-}
 
 ul {
   list-style: none;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
 
-.material-button {
+a {
   padding: 0.3em;
   display: inline-block;
   background-color: #38a7fa;
@@ -218,88 +173,27 @@ ul {
   border-radius: 0.3em;
   border: white 0.3em;
   font-family: Hind Siliguri;
+  color:#000000 ;
   opacity: 80%;
   font-weight: bold;
 }
 
-.imagen_people {
+/* .imagen_people {
   position: absolute;
   top: 0;
   z-index: 1;
   height: 100%;
-  right: 0;
-  background-size: cover;
-  border-radius: 11px;
-}
-
-/* @media screen and (min-width: 768px) {
-  .movie_card {
-    width: 60%;
-  }
-
-  .movie_desc {
-    width: 50%;
-  }
-
-  .info_section {
-    background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
-  }
-
-  .imagen_people {
-    width: 40%;
-    background-position: -80% 10% !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .movie_card {
-    width: 95%;
-    margin: 70px auto;
-    min-height: 350px;
-    height: auto;
-  }
-
-  .imagen_people {
-    width: 40%;
-    background-position: 50% 50% !important;
-  }
-
-  .movie_header {
-    width: 100%;
-    margin-top: 85px;
-  }
-
-  .movie_desc {
-    width: 100%;
-  }
-
-  .info_section {
-    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
-    display: inline-grid;
-  }
-} */
-
-.imagen_people {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  height: 100%;
+  width: 100%;
   right: 0;
   background-size: cover;
   border-radius: 11px;
   background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
   display: inline-grid;
-}
+  background-position: -80% 10% !important;
+  overflow:hidden;
+} */
 
 /*BOTONES*/
-
-/* #filter {
-  font-family:Hind Siliguri;
-  font-size: 1.3em;
-  margin: 0.5em;
-  top: 2em;
-  display: inline-block; 
-  margin-right: 20px;}*/
 
 .container0{
   display: flex;
@@ -333,11 +227,10 @@ select {
   border-radius: 0.8em;
   background-color: #fff;
   text-align: center;
-  
 }
 
 .container{
-  display: flex;
+ display: flex;
  justify-content: center;
  align-items: center;
  flex-direction: row;
@@ -361,7 +254,6 @@ button {
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
 
- 
 }
 
 button:hover {
@@ -369,3 +261,135 @@ button:hover {
   color: #fff;
   text-decoration: none;
 }
+
+.footer{
+  margin-top: 80px;
+  width: 100%;
+  padding: 30px 15%;
+  background: #000000;
+  color: #efefef;
+  display: flex;
+  border-radius: 3px;
+  border-top-style:inset;
+  border-color: #38a7fa;
+  border-width:5px;
+}
+.footer div {
+  text-align: center;
+  padding: 1%;
+  font-family: Hind Siliguri, sans-serif;   
+}
+
+ /*Aqui empieza el Responsive HEADER*/
+
+@media (max-width: 768px) and (max-width: 1024px) {
+  /* Aplicamos estilos específicos para tamaños de pantalla pequeños */
+  .image1 {
+    max-width: 30%;
+    /* Establecemos un ancho máximo proporcional */
+  }
+
+  .slogan {
+    padding: 1em;
+    /* Incrementamos el espacio interno */
+  }
+
+  h1 {
+    font-size: 100%;
+    /* Aumentamos el tamaño del texto para tamaños pequeños */
+    display: grid;
+    text-align: center;
+  }
+  .description{
+    font-size: 0,3em;
+  }
+}
+
+@media (max-width: 390px) and (max-width: 768px) {
+  .logo {
+    max-width: 100%;
+    /* Establecemos un ancho máximo proporcional */
+    height: 150px;
+  }
+/* cantida de espacio texto en tarjeta*/
+  .movie_desc {
+    width: 60%;
+  }
+  .image1 {
+    max-width: 45%;
+    /* Establecemos un ancho máximo proporcional */
+  }
+
+  .slogan {
+    padding: 1em;
+    /* Incrementamos el espacio interno */
+  }
+
+  h1 {
+    font-size: 100%;
+    /* Aumentamos el tamaño del texto para tamaños pequeños */
+    display: grid;
+  }
+  .imagen_people {
+    background-size: contain;
+   
+  }
+  .description{
+    font-size: 0,3em;
+  }
+  
+}
+/*Aqui empieza el Responsive TARJETAS*/
+
+@media screen and (min-width: 768px) {
+  /*tamaña tarjtea*/
+  .movie_card {
+    width: 75%;
+  }
+  .description{
+    font-size: 0,3em;
+  }
+/* cantida de espacio texto en tarjeta*/
+  .movie_desc {
+    width: 70%;
+  }
+
+  .info_section {
+    background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
+  }
+
+  .imagen_people {
+    width: 35%;
+    background-position: -80% 10% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movie_card {
+    width: 65%;
+    margin: 70px auto;
+    min-height: 350px;
+    height: auto;
+  }
+
+  .imagen_people {
+    width: 40%;
+    background-position: 50% 50% !important;
+  }
+
+  .movie_header {
+    width: 100%;
+    margin-top: 85px;
+  }
+  .description{
+    font-size: 0,3em;
+  }
+  .movie_desc {
+    width: 100%;
+  }
+
+  .info_section {
+    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+    display: inline-grid;
+  }
+} 
