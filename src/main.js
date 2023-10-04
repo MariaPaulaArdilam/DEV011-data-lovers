@@ -2,30 +2,54 @@
 import { renderItems } from "./view.js";
 import { filterData } from "./dataFunctions.js";
 import { sortData } from "./dataFunctions.js";
+import { computeStats } from "./dataFunctions.js";
+import data from "./data/ghibli/ghibli.js";
 
-// import data from './data/lol/lol.js';
-import data from "/data/ghibli/ghibli.js";
-// import data from './data/rickandmorty/rickandmorty.js';
-
-console.log(filterData, renderItems, data);
+console.log(computeStats, renderItems, data);
 
 const root = document.getElementById("root");
 root.appendChild(renderItems(data.films));
 
 const datafilm = data.films;
 const selectFilter = document.getElementsByName("Filter")[0];
-
+let resulFilter;
 selectFilter.addEventListener("change", () => {
-  const resulFilter = filterData(datafilm, "director", selectFilter.value);
+  resulFilter = filterData(datafilm, "director", selectFilter.value);
   console.log(resulFilter);
   root.innerHTML = "";
   root.appendChild(renderItems(resulFilter));
 });
 
-const dataorden = data.films;
 const selectSort = document.getElementsByName("alphabet")[0];
 
 selectSort.addEventListener("change", () => {
+  let dataorden = null;
+  if (resulFilter) {
+    dataorden = resulFilter;
+  } else {
+    dataorden = data.films;
+  }
   const resultsort = sortData(dataorden, "title", selectSort.value);
-  console.log(resultsort);
+  root.innerHTML = "";
+  root.appendChild(renderItems(resultsort));
+  // console.log(resultsort);
+});
+
+//Función Boton limpiar.
+
+const ResetBotton = document.querySelector(
+  "button[data-testid='button-clear']"
+);
+ResetBotton.addEventListener("click", () => {
+  root.innerHTML = "";
+  root.appendChild(renderItems(data.films));
+});
+
+//calculo
+const estadistica = document.querySelector(".top-5");
+estadistica.addEventListener("click", () => {
+  const peliculasScoreMayor95 = computeStats(data);
+  alert("estadisticas");
+  //root.appendChild(renderItems(peliculasScoreMayor95));
+  console.log(peliculasScoreMayor95);
 });

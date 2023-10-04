@@ -6,28 +6,25 @@
   /* para que la imagen se repita */
   border-radius: 6px;
   margin: 0.5px 1px -16px 1px;
-  border: 1px solid #92cffc;
+  border: 1px solid #92CFFC;
   /*agrege color al borde*/
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+/*tipografia*/
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap");
-
 /*tipo de letra*/
 body {
-  background-color: #f5faff;
+  background-color: #F5FAFF;
   font-family: "Hind Siliguri", sans-serif;
 }
-
 .image1 {
   height: auto;
   width: 100%;
   max-width: 310px;
   margin: 16px auto;
 }
-
 .slogan {
   background-color: black;
   color: white;
@@ -35,7 +32,7 @@ body {
   border-radius: 5px;
   border: 1px solid black;
   height: 40px;
-  font-size: 10px;
+  font-size: 0.5em;
   font-family: Hind Siliguri, sans-serif;
   text-align: center;
   padding: 1em;
@@ -44,146 +41,75 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 h1 {
   font-weight: 30%;
 }
-
-@media (max-width: 768px) and (max-width: 1024px) {
-  /* Aplicamos estilos específicos para tamaños de pantalla pequeños */
-  .image1 {
-    max-width: 40%;
-    /* Establecemos un ancho máximo proporcional */
-  }
-
-  .slogan {
-    padding: 1em;
-    /* Incrementamos el espacio interno */
-  }
-
-  h1 {
-    font-size: 100%;
-    /* Aumentamos el tamaño del texto para tamaños pequeños */
-    display: grid;
-    text-align: center;
-  }
-}
-
-@media (max-width: 390px) and (max-width: 768px) {
-  .logo {
-    max-width: 100%;
-    /* Establecemos un ancho máximo proporcional */
-    height: 150px;
-  }
-
-  .image1 {
-    max-width: 45%;
-    /* Establecemos un ancho máximo proporcional */
-  }
-
-  .slogan {
-    padding: 1em;
-    /* Incrementamos el espacio interno */
-  }
-
-  h1 {
-    font-size: 100%;
-    /* Aumentamos el tamaño del texto para tamaños pequeños */
-    display: grid;
-  }
-}
-
 /*TARJETAS*/
-
 main {
-  padding: 2em;
+  padding: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: center;
 }
-
 * {
   margin: 0;
   padding: 0;
-
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.movie_card{
+.movie_card {
   margin: 3em 1em 1em 1em;
-
+  overflow: hidden;
+  margin-top: 0%;
 }
-
 .movie_card.main {
   position: relative;
-  width: 60%;
+  width: 65%;
   height: 80%;
-  margin: 3em 1em 1em 1em; 
+  margin: 3em 1em 1em 1em;
   border-radius: 10px;
   box-shadow: 1px 1px 1px px rgba(19, 160, 134, 0.6);
-  
 }
-
-
-
-/*.movie_card:hover{ el ovimiento cuando se coloca encima el cursosr 
+.imagen_people {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 130%;
+  width: 110%;
+  right: 0;
+  background-size: cover;
+  border-radius: 11px;
+  background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+  display: inline-grid;
+  background-position: -80% 10% !important;
+  overflow: hidden;
+}
+/* .movie_card:hover{ /*el ovimiento cuando se coloca encima el cursosr
     transform: scale(1.02);
     transition: all 0.4s;
-  }*/
-
+  } */
 .info_section {
   position: relative;
   /* width: 100%; */
   height: 100%;
   background-blend-mode: multiply;
-  z-index: 2;
   border-radius: 10px;
   padding: 1em;
-  
+  background: linear-gradient(to right, #0D0D0C 50%, transparent 100%);
 }
-.movie_card.imagen_people{
-  position: relative;
-  overflow: hidden;
-}
-.movie_card.imagen_people::before{
-  content: '';
-  position:absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #0d0d0c 50%, transparent 50%);
-  transition: 0.5s;
-  z-index: 1;
-}
-
-.imagen_people img {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  height: 100%;
-  right: 0;
-  background-size: cover;
-  border-radius: 11px;
-}
-.movie_header {
-  display: flexbox;
-  position: fixed;
-  top: 0;
-  padding: 25px;
-  height: 40%;
-}
-
 h2 {
   color: #fff;
   font-weight: 400;
   font-family: Hind Siliguri;
+  font-size: 0,5em;
 }
-
 h4 {
-  color: #9ac7fa;
+  color: #9AC7FA;
   font-weight: 400;
   font-family: Hind Siliguri;
 }
-
 .year {
   display: inline-block;
   margin-top: 10px;
@@ -192,13 +118,6 @@ h4 {
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.13);
 }
-
-.type {
-  display: inline-block;
-  color: #cee4fd;
-  margin-left: 10px;
-}
-
 .imagen {
   position: relative;
   float: left;
@@ -206,120 +125,59 @@ h4 {
   height: 200px;
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
 }
-
-.movie_desc {
+.description {
   padding: 20px;
   height: 50%;
-  width: 50%;
-}
-
-.description {
-  color: #cfd6e1;
+  width: 65%;
+  color: #CFD6E1;
   font-family: Hind Siliguri;
+  font-size: 1em;
 }
-
-.movie_buttons {
-  height: 20%;
-  color: black;
-  padding-bottom: 20px;
-  box-sizing: 1em;
-}
-
 ul {
   list-style: none;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-.material-button {
+a {
   padding: 0.3em;
   display: inline-block;
-  background-color: #38a7fa;
+  background-color: #38A7FA;
   transition: color 0.3s;
   transition-delay: 0.15s;
   margin: 0 10px;
   border-radius: 0.3em;
   border: white 0.3em;
   font-family: Hind Siliguri;
+  color: #000000;
   opacity: 80%;
   font-weight: bold;
 }
-
-
- @media screen and (min-width: 768px) {
-  .movie_card {
-    width: 60%;
-  }
-
-  .movie_desc {
-    width: 50%;
-  }
-
-  .info_section {
-    background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
-  }
-
-  .imagen_people {
-    width: 40%;
-    background-position: -80% 10% !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .movie_card {
-    width: 95%;
-    margin: 70px auto;
-    min-height: 350px;
-    height: auto;
-  }
-
-  .imagen_people {
-    width: 40%;
-    background-position: 50% 50% !important;
-  }
-
-  .movie_header {
-    width: 100%;
-    margin-top: 85px;
-  }
-
-  .movie_desc {
-    width: 100%;
-  }
-
-  .info_section {
-    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
-    display: inline-grid;
-  }
-} 
-
 /* .imagen_people {
   position: absolute;
   top: 0;
   z-index: 1;
   height: 100%;
+  width: 100%;
   right: 0;
   background-size: cover;
   border-radius: 11px;
   background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
   display: inline-grid;
+  background-position: -80% 10% !important;
+  overflow:hidden;
 } */
-
 /*BOTONES*/
-
-/* #filter {
-  font-family:Hind Siliguri;
-  font-size: 1.3em;
-  margin: 0.5em;
-  top: 2em;
-  display: inline-block; 
-  margin-right: 20px;}*/
-
-.container0{
+.container0 {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: center;
+}
+.container0.select {
   margin-top: 2em;
 }
 select {
@@ -327,13 +185,13 @@ select {
   cursor: pointer;
   height: 42px;
   outline: 0;
-  background: #e1ecf4;
+  background: #E1ECF4;
   color: #000000;
   font-size: 1.1em;
   font-weight: bold;
-  color: #0c0c0c;
+  color: #0C0C0C;
   font-family: Hind Siliguri, sans-serif;
-  border: 1px solid #0383b6;
+  border: 1px solid #0383B6;
   box-shadow: 3px 3px 8px rgb(0, 36, 156);
   border-radius: 12px;
   position: relative;
@@ -346,23 +204,20 @@ select {
   border-radius: 0.8em;
   background-color: #fff;
   text-align: center;
-  
 }
-
-.container{
+.container {
   display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: row;
- flex-wrap: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: center;
 }
-
 button {
   background-image: linear-gradient(
     to right,
-    #38a7fa 0%,
+    #38A7FA 0%,
     #030303 60%,
-    #38a7fa 100%
+    #38A7FA 100%
   );
   margin: 2.5em 1em 1em 2em;
   padding: 12px 45px;
@@ -373,12 +228,189 @@ button {
   color: white;
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
-
- 
 }
-
 button:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
+.footer {
+  margin-top: 80px;
+  width: 100%;
+  padding: 20px 8%;
+  background: #000000;
+  color: #EFEFEF;
+  display: flex;
+  border-radius: 3px;
+  border-top-style: inset;
+  border-color: #65B9FA;
+  border-width: 5px;
+}
+.footer div {
+  text-align: center;
+  padding: 1%;
+  font-family: Hind Siliguri, sans-serif;
+}
+/*Aqui empieza el Responsive HEADER*/
+@media (max-width: 768px) and (max-width: 1024px) {
+  /* Aplicamos estilos específicos para tamaños de pantalla pequeños */
+  .image1 {
+    width: 30%;
+    /* Establecemos un ancho máximo proporcional */
+  }
+  .slogan {
+    padding: 1em;
+    /* Incrementamos el espacio interno */
+  }
+  h1 {
+    font-size: 100%;
+    /* Aumentamos el tamaño del texto para tamaños pequeños */
+    display: grid;
+    text-align: center;
+  }
+  .description {
+    font-size: 0, 3em;
+  }
+}
+@media (min-width: 370px) and (max-width: 767px) {
+  .logo {
+    max-width: 100%;
+    /* Establecemos un ancho máximo proporcional */
+    height: 150px;
+  }
+  /* cantida de espacio texto en tarjeta*/
+  .movie_desc {
+    width: 60%;
+  }
+  .image1 {
+    max-width: 45%;
+    /* Establecemos un ancho máximo proporcional */
+  }
+  .slogan {
+    padding: 1em;
+    /* Incrementamos el espacio interno */
+  }
+  h1 {
+    font-size: 100%;
+    /* Aumentamos el tamaño del texto para tamaños pequeños */
+    display: grid;
+  }
+  .imagen_people {
+    background-size: contain;
+  }
+  .movie_card {
+    width: 100% !important;
+    margin: 1em !important;
+  }
+  .description {
+    font-size: 0, 3em;
+    width: 100%;
+  }
+  main {
+    padding: 0em;
+  }
+  select {
+    width: 20em;
+  }
+  .container0 {
+    display: flex;
+    flex-direction: column;
+  }
+  select {
+    width: 18em;
+    margin: 1em 1em 1em 1em !important;
+  }
+  .imagen {
+    height: 13em;
+    left: 30%;
+  }
+  a {
+    object-position: 20%;
+    margin: 13px 103px;
+    margin-top: 0;
+  }
+  .year {
+    margin: 13px 103px;
+  }
+}
+/*Aqui empieza el Responsive TARJETAS*/
+@media screen and (min-width: 768px) {
+  /*tamaña tarjtea*/
+  .name-movie {
+    font: 0.5em;
+    width: 50%;
+  }
+  .movie_card {
+    width: 91%;
+  }
+  .description {
+    font-size: 0, 3em;
+  }
+  /* cantida de espacio texto en tarjeta*/
+  .movie_desc {
+    width: 70%;
+  }
+  .info_section {
+    background: linear-gradient(to right, #0D0D0C 60%, transparent 100%);
+  }
+  .imagen_people {
+    width: 35%;
+    background-position: -80% 10% !important;
+  }
+  a {
+    object-position: 20%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .movie_card {
+    width:80%;
+    margin: 70px auto;
+    min-height: 350px;
+    height: auto;
+    margin-top: 0;
+  }
+  .imagen_people {
+    width: 0%;
+    background-position: 50% 50% !important;
+  }
+  .movie_header {
+    width: 100%;
+    margin-top: 85px;
+  }
+  h2{
+    text-shadow:
+    0 0 5px rgba(0,178,255,1),
+    0 0 10px rgba(0,178,255,1),
+    0 0 20px rgba(0,178,255,1),
+    0 0 40px rgba(38,104,127,1),
+    0 0 80px rgba(38,104,127,1),
+    0 0 90px rgba(38,104,127,1),
+    0 0 100px rgba(38,104,127,1),
+    0 0 140px rgba(38,104,127,1),
+    0 0 180px rgba(38,104,127,1);
+  }
+  .description {
+    font-size: 0, 3em;
+    width: 100%;
+  }
+  .movie_desc {
+    width: 50%;
+  }
+  .info_section {
+    background: linear-gradient(to top, rgb(20, 20, 19) 100%, transparent 100%);
+    display: inline-grid;
+    margin-top: 1%;
+  }
+  a {
+    object-position: 20%;
+    margin: 10px 103px;
+    margin-top: 0;
+  }
+  .year {
+    margin: 10px 103px;
+  }
+  .imagen {
+    height: 13em;
+    left: 24%;
+  }
 }
