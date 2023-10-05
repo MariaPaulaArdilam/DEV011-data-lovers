@@ -51,7 +51,8 @@
       <i></i>
 
       <label for=""></label>
-      <select data-testid="select-sort" name="alphabet">
+
+      <select data-testid="select-sort" name="alphabet" >
         <option value="">Ordenar por titulo</option>
         <option value="asc">A-Z</option>
         <option value="desc">Z-A</option>
@@ -60,29 +61,35 @@
     </div>
 
     <div class="container">
-      <button id="top5" class="top5oculto">Top 5</button>
 
-      <button data-testid="select-filter" onclick="">Limpiar</button>
+      <button id="top5" class="top-5">Datos</button>
+
+      <button data-testid="button-clear" onclick="">Limpiar</button>
     </div>
 
     <main>
-    <div class="movie_card" id="root"></div>
-  </main>
 
-      <footer>
-    <div class="footer">
-      <div class="col-1">
-      <h3> María Paula Ardila & Johanna Marcela Garavito © 2023</h3>
-      <p>Data Lovers</p>
-      <p>Laboratoria</p>
-    </div>
-    <img src="https://clipart-library.com/images_k/totoro-transparent-gif/totoro-transparent-gif-1.png" width=7%>
-    
-    <div class="col-2">
-      <i class="fa-brands fa-github"></i>
-    </div>
+      <div class="movie_card" id="root"></div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="col-1">
+          <h3>María Paula Ardila - Johanna Marcela Garavito © 2023</h3>
+          <p>Data Lovers</p>
+          <p>Laboratoria</p>
+        </div>
+        <img
+          src="https://clipart-library.com/images_k/totoro-transparent-gif/totoro-transparent-gif-1.png"
+          width="7%"
+        />
+
+        <div class="col-2">
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </div>
     </footer>
-  </div>
+
     <script src="main.js" type="module"></script>
   </body>
 </html>

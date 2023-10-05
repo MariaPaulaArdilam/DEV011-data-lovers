@@ -2,12 +2,10 @@
 import { renderItems } from "./view.js";
 import { filterData } from "./dataFunctions.js";
 import { sortData } from "./dataFunctions.js";
+import { computeStats } from "./dataFunctions.js";
+import data from "./data/ghibli/ghibli.js";
 
-// import data from './data/lol/lol.js';
-import data from "/data/ghibli/ghibli.js";
-// import data from './data/rickandmorty/rickandmorty.js';
-
-console.log(filterData, renderItems, data);
+console.log(computeStats, renderItems, data);
 
 const root = document.getElementById("root");
 root.appendChild(renderItems(data.films));
@@ -23,28 +21,46 @@ selectFilter.addEventListener("change", () => {
 
 });
 
-
 const selectSort = document.getElementsByName("alphabet")[0];
 
 selectSort.addEventListener("change", () => {
-  let dataorden = null 
-  if (resulFilter){
-    dataorden = resulFilter
+  let dataorden = null;
+  if (resulFilter) {
+    dataorden = resulFilter;
+  } else {
+    dataorden = data.films;
   }
-  else{
-    dataorden = data.films
-  }
-  let resultsort = sortData(dataorden, "title", selectSort.value);
-  root.innerHTML=""
-  root.appendChild(renderItems(resultsort))
-  console.log(resultsort);
+  const resultsort = sortData(dataorden, "title", selectSort.value);
+  root.innerHTML = "";
+  root.appendChild(renderItems(resultsort));
+  // console.log(resultsort);
 });
 
-//Función Boton limpiar.
+///calculo
+const estadistica = document.querySelector(".top-5");
+estadistica.addEventListener("dblclick", () => {
+  const peliculasScoreMayor95 = computeStats(data);
+  root.innerHTML = "";
+  root.appendChild(renderItems(data.films));
+  console.log(peliculasScoreMayor95);
+});
+estadistica.addEventListener("click", () => {
+  const peliculasScoreMayor95 = computeStats(data);
 
-const ResetBotton = document.querySelector("button[data-testid='select-filter']");
-ResetBotton.addEventListener('click',() =>{
-  window.location.reload(true);
-selectFilter.selectedIndex = 0;
-selectSort.selectedIndex = 0;
- });
+  // Manda texto con los resultados
+  const resultadoTexto = `
+    La película con el score más alto es: ${peliculasScoreMayor95.peliculaMaxScore.title}<br><br>
+    ${peliculasScoreMayor95.cantidadPeliculasScoreMayor95} peliculas de Studio Ghibli tienen el Score por encima de 95<br><br>
+    El promedio de scores en Studio Ghibli es de: ${peliculasScoreMayor95.estadistica}
+    `;
+  estadistica.innerHTML = resultadoTexto;
+
+//Función Boton limpiar.
+const ResetBotton = document.querySelector("button[data-testid='button-clear']");
+ResetBotton.addEventListener("click", () => {
+  root.innerHTML = "";
+  estadistica.innerHTML="Datos";
+  root.appendChild(renderItems(data.films));
+
+});
+
