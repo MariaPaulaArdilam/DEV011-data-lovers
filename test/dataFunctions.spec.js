@@ -1,8 +1,7 @@
-import { filterData, sortData, computeStats } from "../src/dataFunctions.js";
+import { filterData } from "../src/dataFunctions.js";
+import { sortData } from "../src/dataFunctions.js";
+import { computeStats } from "../src/dataFunctions.js";
 import { data as fakeData } from "./data.js";
-import { data as datafake} from "./data.js"
-
-console.log(fakeData);
 
 describe("filter Funtions", () => {
   it("returns title Castle in the Sky, My Neighbor Totoro", () => {
@@ -27,10 +26,14 @@ describe("ordenado2", () => {
     expect(resultdesc).toEqual(fakeData.reverse());
   });
 });
-
 describe("estadistica", () => {
-  it("deberia retornar Only Yesterday", () => {
-    const resultestadistica = computeStats(datafake);
-    expect(resultestadistica.peliculaMaxScore).toBeCloseTo("Only Yesterday");
+  it("calcular las estadísticas correctamente usando el rt_score", () => {
+    const fakeData = {
+      films: [{ rt_score: "93" }, { rt_score: "95" }],
+    };
+    const resultado = computeStats(fakeData);
+    expect(resultado.estadistica).toBe(94);
+    expect(resultado.peliculaMaxScore.rt_score).toBe("95");
+    expect(resultado.cantidadPeliculasScoreMayor95).toBe(0);
   });
 });

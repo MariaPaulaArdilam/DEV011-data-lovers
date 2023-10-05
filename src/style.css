@@ -15,6 +15,10 @@
 /*tipografia*/
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap");
 /*tipo de letra*/
+header{
+  color: #38A7FA;
+}
+
 body {
   background-color: #F5FAFF;
   font-family: "Hind Siliguri", sans-serif;

@@ -35,21 +35,35 @@ selectSort.addEventListener("change", () => {
   // console.log(resultsort);
 });
 
-//Función Boton limpiar.
 
-const ResetBotton = document.querySelector(
-  "button[data-testid='button-clear']"
-);
-ResetBotton.addEventListener("click", () => {
+
+///calculo
+const estadistica = document.querySelector(".top-5");
+estadistica.addEventListener("dblclick", () => {
+  const peliculasScoreMayor95 = computeStats(data);
   root.innerHTML = "";
   root.appendChild(renderItems(data.films));
+  console.log(peliculasScoreMayor95);
 });
-
-//calculo
-const estadistica = document.querySelector(".top-5");
 estadistica.addEventListener("click", () => {
   const peliculasScoreMayor95 = computeStats(data);
-  alert("estadisticas");
-  //root.appendChild(renderItems(peliculasScoreMayor95));
-  console.log(peliculasScoreMayor95);
+
+  // Manda texto con los resultados
+  const resultadoTexto = `
+    La película con el score más alto es: ${peliculasScoreMayor95.peliculaMaxScore.title}<br><br>
+    ${peliculasScoreMayor95.cantidadPeliculasScoreMayor95} peliculas de Studio Ghibli tienen el Score por encima de 95<br><br>
+    El promedio de scores en Studio Ghibli es de: ${peliculasScoreMayor95.estadistica}
+    `;
+  estadistica.innerHTML = resultadoTexto;
+});
+
+//Función Boton limpiar.
+
+const ResetBotton = document.querySelector("button[data-testid='button-clear']");
+ResetBotton.addEventListener("click", () => {
+  root.innerHTML = "";
+  estadistica.innerHTML="Datos";
+  root.appendChild(renderItems(data.films));
+
+  
 });

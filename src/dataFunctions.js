@@ -52,16 +52,16 @@ export const computeStats = (data) => {
   const estadistica = data.films.reduce((total, movie) =>{
     return total + parseFloat(movie.rt_score);
   }, 0) / data.films.length;
-  // const peliculaMaxScore = data.films.reduce((max, movie) => {
-  //   return parseFloat(movie.rt_score) > parseFloat(max.rt_score) ? movie : max;
-  // });
-  // const cantidadPeliculasScoreMayor95 = data.films.reduce((contador, movie) => {
-  //   return parseFloat(movie.rt_score) > 95 ? contador + 1 : contador;
-  // }, 0);
+  const peliculaMaxScore = data.films.reduce((max, movie) => {
+    return parseFloat(movie.rt_score) > parseFloat(max.rt_score) ? movie : max;
+  });
+  const cantidadPeliculasScoreMayor95 = data.films.reduce((contador, movie) => {
+    return parseFloat(movie.rt_score) > 95 ? contador + 1 : contador;
+  }, 0);
   return {
     estadistica,
-    // peliculaMaxScore,
-    // cantidadPeliculasScoreMayor95,
+    peliculaMaxScore,
+    cantidadPeliculasScoreMayor95,
   };
 };
 //.map

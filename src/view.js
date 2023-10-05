@@ -34,7 +34,7 @@ export const renderItems = (data) => {
         <p class="description" itemprop="description">
           ${film.description}
         <p>
-       
+        <dd itemprop="alphabet"></dd>
       
       </div>
 `;
@@ -42,3 +42,6 @@ export const renderItems = (data) => {
   });
   return ul;
 };
+
+
+

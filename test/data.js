@@ -346,16 +346,3 @@ export const data = [
     ],
   },
 ];
-
-export const datafake = {
-  film: {
-    movie1: {
-      title: "Castle in the Sky",
-      rt_score: "95",
-    },
-    movie2: {
-      title: "Only Yesterday",
-      rt_score: "100",
-    },
-  },
-};

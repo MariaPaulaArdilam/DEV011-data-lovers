@@ -1,8 +1,10 @@
 # Data Lovers
 
+Studio Ghibli 
+
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
+* [1. Studio Ghibli](#1-Studio Ghibli - Definicion de producto)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Funcionalidades](#3-funcionalidades)
 * [4. Consideraciones generales](#4-consideraciones-generales)
@@ -15,345 +17,76 @@
 
 ***
 
-## 1. Preámbulo
-
-Según [Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read),
-el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
-Cada día generamos 2.5 millones de terabytes de datos, una cifra sin
-precedentes.
-
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas
-grandes cantidades de datos se conviertan en **información** fácil de leer para
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
-hacerlo es creando _interfaces_ y _visualizaciones_.
-
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
-izquierda se puede construir una interfaz amigable y entendible por las
-usuarias, al lado derecho.
-
-![pokemon-data-to-ui](https://user-images.githubusercontent.com/12631491/218505816-c6d11758-9de4-428f-affb-2a56ea4d68c4.png)
-
-## 2. Resumen del proyecto
-
-En este proyecto **construirás una _página web_ para visualizar un
-_conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuaria
-necesita.
-
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y y calcular alguna estadística**. Con estadística
-nos referimos a distintos cálculos que puedes hacer con la data para mostrar
-información aún más relevante para los usuarios (promedio, el valor máximo
-o mínimo, etc).
-
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que
-explores y decidas con qué temática te interesa trabajar. Hemos elegido
-específicamente estos sets de datos porque creemos que se adecúan bien a esta
-etapa de tu aprendizaje.
-
-Una vez que definas tu área de interés, busca entender quién es tu usuaria y qué
-necesita saber o ver exactamente; luego podrás construir la interfaz que
-le ayude a interactuar y entender mejor esos datos.
-
-Estos son datos que te proponemos:
-
-* [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 251 Pokémon de la región de Kanto
-  y Johto, junto con sus respectivas estadísticas usadas en el juego
-  [Pokémon GO](http://pokemongolive.com).
-  - [Investigación con jugadores de Pokémon Go](src/data/pokemon/README.md)
-
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
-  Este set de datos muestra la lista de campeones en una liga del
-  juego League of Legends (LoL).
-  - [Investigación con jugadores de LoL](src/data/lol/README.md)
-
-* [Rick and Morty](src/data/rickandmorty/rickandmorty.json).
-  Este set nos proporciona la lista de los personajes de la serie Rick and
-  Morty. [API Rick and Morty](https://rickandmortyapi.com).
-  - [Investigación con seguidores de Rick and Morty](src/data/rickandmorty/README.md)
-
-* [Juegos Olímpicos de Río de Janeiro](src/data/athletes/athletes.json).
-  Este set nos proporciona la lista de los atletas que ganaron medallas en
-  las olimpiadas de Río de Janeiro.
-  - [Investigación con interesados en juegos olímpicos de Río de Janeiro](src/data/athletes/README.md)
-
-* [Studio Ghibli](src/data/ghibli/ghibli.json).
-  En este set encontrarás una lista de las animaciones y sus personajes del
-  [Studio Ghibli](https://ghiblicollection.com/).
-  - [Investigación con seguidores de las animaciones del Studio Ghibli](src/data/ghibli/README.md)
-
-El objetivo principal de este proyecto es que aprendas a diseñar y construir
-una interfaz web donde se pueda visualizar y manipular data,
-entendiendo lo que tu usuaria necesita.
-
-## 3. Funcionalidades
-
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y calcular alguna estadística**.
-
-Aquí definimos en más detalle las funcionalidades mínimas que debe tener:
-
-* La aplicación debe permitir a la usuaria ver los items de la data en una visualización,
-  que puede ser [tipo tarjetas](http://www.uxables.com/diseno-ux-ui/que-es-y-como-disenar-una-card/)
-  o cualquier otra forma que tú decidas como la adecuada (pero desde aquí
-  referimos a los items como "tarjetas"). **Cada una de las tarjetas debe estar
-  contenida en un elemento `<li>` y estos a su vez contenido en
-  un elemento `<ul>`.**
-
-* El elemento `<ul>` deberá ser hijo de un elemento con atributo _id_
-  de valor "root".
-
-* Las tarjetas deben resaltar los valores de las propiedades de la data que
-  le interesaría a la usuaria ver. Por ejemplo: nombre, fecha, imagen, etc.
-  **Si vas a filtrar u ordenar por una propiedad, la tarjeta tiene que mostrar
-  el valor de esta propiedad a la usuaria.**
-
-* La interfaz debe estructurar semánticamente la data usando el estándar [microdatos](https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata).
-  Es obligatorio usar al menos los atributos [`itemscope`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemscope),
-  [`itemtype`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemtype)
-  y el atributo [`itemprop`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemprop).
-
-  Por ejemplo, la siguiente data correspondiente a pokemón Pikachu:
-
-  ```json
-    {
-      "num": "025",
-      "name": "pikachu",
-      "pokemon-rarity": "normal",
-    }
-  ```
-
-  puede ser estructurada semánticamente en HTML como:
-
-  ```html
-  <dl itemscope itemtype="pokemon">
-    <dt>Name:</dt><dd itemprop="name">pikachu</dd>
-    <dt>Number:</dt><dd itemprop="num">025</dd>
-    <dt>Rarity:</dt><dd itemprop="pokemon-rarity">normal</dd>
-  </dl>
-  ```
-
-* La aplicación debe calcular y visualizar una estadística de la data. Puede
-  ser una propiedad computada de cada item, como una propiedad adicional
-  (por ejemplo, el índice de masa corporal de cada pokemon) o unas estadísticas
-  de la data completa (por ejemplo, peso promedio de todos los pokemones).
-
-* La aplicación debe permitir a la usuaria filtrar la data. Deberás usar
-  un elemento [`<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
-  con [un atributo de datos](https://developer.mozilla.org/es/docs/Learn/HTML/Howto/Use_data_attributes)
-  `data-testid="select-filter"`, y un atributo `name` con el nombre
-  de la propiedad por la que filtrará (por ejemplo, si vas a filtrar por "type",
-  el `<select>` tendrá  `name="type"`). Los `<option>` de este `<select>` deberán
-  tener en el atributo `value` el valor del filtro (por ejemplo, si vas a filtrar
-  por type "fire" sería `<option value="fire">Fire</option>`).
-
-* La aplicación debe permitir a la usuaria ordenar la data.
-  - Tendrá al menos un control `<select>` para ordenar.
-  - Si usas solo un control `<select>`, debe tener
-    [un atributo de datos](https://developer.mozilla.org/es/docs/Learn/HTML/Howto/Use_data_attributes)
-    `data-testid="select-sort"` y un atributo `name` con el nombre de la
-    propiedad por la que ordenará. (por ejemplo, si vas a ordenar por
-    "num" seria `name="num"`). Este `<select>` tendrá dos [`<option>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option)
-    con `value` `asc` y `desc`, para ordenar ascendente y descendente la data
-    respectivamente (por ejemplo, `<option value="asc">A - Z</option>`).
-  - Una alternativa es ofrecer la usuaria un ordenamiento mas complejo.
-    Podrías implementar ordenar por varios propiedades. En este caso sería con
-    un `<select>` con un atributo de datos `data-testid="select-sort"`, y que
-    contiene hijos `<option>` con un `value` del nombre de la propiedad con
-    cual vas a ordenar. (Por ejemplo, `<option value="name">Nombre</option>`).
-    También, necesitarás otro control (`<radio>`,`<select>`, etc.) para decir
-    que el ordenamiento es ascendente o descendente. Este control secundaria
-    tendrá un atributo `name="sort-order"`, y tiene values `asc` y `desc`.
-
-* Las funcionalidades de ordenar deben operar sobre la data filtrada.
-  Por ejemplo, si filtro los pokemones de tipo fuego y luego los ordeno por
-  nombre ascendentemente, la aplicación deberá mantener el filtro aplicado y
-  ordenar los pokemones de tipo fuego.
-
-* La aplicación debe permitir a la usuaria reiniciar la aplicación, limpiando
-  filtros y ordenamiento, con un `<button>` con un atributo de datos
-  `data-testid="button-clear"`.
-
-* Las operaciones de filtrar, ordenar, limpiar, etc. no deben recargar
-  la página, si no que deben agregar el contenido en una manera
-  dinámica via javascript.
-
-* La aplicación será _responsive_, es decir, debe visualizarse sin problemas
-  desde distintos tamaños de pantallas: móviles, tablets y desktops.
-
-Estos wireframes son ejemplos de un interfaz que puede cumplir con esta
-funcionalidad:
-
-* [Wireframe 1](https://github-production-user-asset-6210df.s3.amazonaws.com/92090/261137084-1625aeb8-883c-4b79-86da-5fab34fa5b88.png)
-* [Wireframe 2](https://github-production-user-asset-6210df.s3.amazonaws.com/92090/261137087-6cef16bc-643a-4d6d-bc1c-e0daaeb21c88.png)
-
-## 4. Consideraciones generales
-
-* Este proyecto se debe resolver en duplas.
-* El rango de tiempo estimado para completar el proyecto es de 3 a 4 Sprints.
-* El proyecto será entregado subiendo tu código a
-  [GitHub](https://github.com/) (commit/push) y la interfaz será desplegada
-  usando [GitHub Pages](https://pages.github.com/).
-
-## 5. Consideraciones técnicas
-
-La lógica del proyecto debe estar implementada completamente en JavaScript
-(ES6), HTML y CSS. En este proyecto NO está permitido usar librerías o
-frameworks, solo [vanilla JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e),
-con la excepción de librerías para hacer gráficas (charts); ver
-[_Parte opcional_](#7-hacker-edition) más arriba.
-
-El _boilerplate_ contiene una estructura de archivos como punto de partida así
-como toda la configuración de dependencias:
-
-```text
-.
-├── EXTRA.md
-├── README.md
-├── package.json
-├── src
-|  ├── data (según con qué data trabajes)
-|  |  ├── lol
-|  |  |  ├── lol.js
-|  |  |  ├── lol.json
-|  |  |  └── README.md
-|  |  ├── pokemon
-|  |  |  ├── pokemon.js
-|  |  |  ├── pokemon.json
-|  |  |  └── README.md
-|  |  └── // otras carpetas de data
-|  ├── dataFunctions.js
-   ├── view.js
-|  ├── index.html
-|  ├── main.js
-|  └── style.css
-└── test
-   └── data.js
-   └── data.spec.js
-└── tests-read-only
-
-```
-
-### `src/index.html`
-
-Como en el proyecto anterior, existe un archivo `index.html`. Como ya sabes,
-acá va la página que se mostrará a la usuaria. También nos sirve para indicar
-qué scripts se usarán y unir todo lo que hemos hecho.
-
-### `src/main.js`
-
-Recomendamos usar `src/main.js` para todo tu código que tenga que ver con
-mostrar los datos en la pantalla. Con esto nos referimos básicamente a la
-interacción con el DOM. Operaciones como creación de nodos, registro de
-manejadores de eventos (_event listeners_ o _event handlers_).
-
-Esta no es la única forma de dividir tu código, puedes usar más archivos y
-carpetas, siempre y cuando la estructura sea clara para tus compañeras.
-
-En este archivo encontrarás una serie de _imports_ _comentados_. Para _cargar_
-las diferentes fuentes de datos tendrás que _descomentar_ la línea
-correspondiente.
-
-Por ejemplo, si "descomentamos" la siguiente línea:
-
-```js
-// import data from './data/lol/lol.js';
-```
-
-La línea quedaría así:
-
-```js
-import data from './data/lol/lol.js';
-```
-
-Y ahora tendríamos la variable `data` disponible en el script `src/main.js`.
-
-### `src/dataFunctions.js`
-
-El corazón de este proyecto es la manipulación de datos a través de arreglos
-y objetos.
-
-Este archivo va a contener toda la funcionalidad que corresponda
-a obtener, procesar y manipular datos (tus funciones). Por ejemplo:
-
-* `filterData(data, filterBy, value)`: esta función recibe tres parámetros.
-  El primer parámetro, `data`, nos entrega los datos.
-  El segundo parámetro, `filterBy`, nos dice con respecto a cuál de los campos de
-  la data se quiere filtrar.
-  El tercer parámetro, `value`, indica el valor de campo que queremos filtrar.
-
-* `sortData(data, sortBy, sortOrder)`: esta función `sort` u ordenar
-  recibe tres parámetros.
-  El primer parámetro, `data`, nos entrega los datos.
-  El segundo parámetro, `sortBy`, nos dice con respecto a cuál de los campos de
-  la data se quiere ordenar.
-  El tercer parámetro, `sortOrder`, indica si se quiere ordenar de manera
-  ascendente o descendente.
-
-* `computeStats(data)`: la función `compute` o calcular, nos permitirá hacer
-  cálculos estadísticos básicos para ser mostrados de acuerdo a la data
-  proporcionada, esta función debe usar el método reduce.
-
-Estas funciones deben ser [_puras_](https://medium.com/laboratoria-developers/introducci%C3%B3n-a-la-programaci%C3%B3n-funcional-en-javascript-parte-2-funciones-puras-b99e08c2895d)
-e independientes del DOM. Estas funciones serán después usadas desde el archivo
-`src/main.js`, al cargar la página, y cada vez que la usuaria interactúe
-(click, filtrado, ordenado, ...).
-
-### `src/data`
-
-En esta carpeta están los datos de las diferentes fuentes. Encontrarás una
-carpeta por cada fuente, y dentro de cada carpeta dos archivos: uno con la
-extensión `.js` y otro `.json`. Ambos archivos contienen la misma data; la
-diferencia es que el `.js` lo usaremos a través de una etiqueta `<script>`,
-mientras que el `.json` está ahí para opcionalmente cargar la data de forma
-asíncrona con [`fetch()`](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
-(ver sección de [_Parte Opcional_](#7-hacker-edition)).
-
-### `test/dataFunctions.spec.js`
-
-En este archivo tendrás hacer pruebas unitarias de las funciones
-implementadas en el archivo `dataFunctions.js`. (`filterBy`, `sortBy`, etc.)
-
-### `test/data.js`
-
-En esta archivo puedes construir y exportar data "mock" para usar en los tests.
-Es mas fácil probar un arreglo de 5 elementos de un arreglo de 100, por eso
-vas a crear una muestra de la data que quieres probar. Al mínimo
-debes exportar un variable se llama `data`, pero puedes definir y exportar mas
-si sea necesario para tus tests.
-
-### `src/view.js`
-
-Para alcanzar mejor separación de responsabilidades en el código este
-archivo debe tener todas las funciones que utilizara para renderizar
-los elementos dinámicamente.
-
-Al menos requerimos una función obligatoria:
-
-* `renderItems(data)`: esta función recibe el arreglo de data para renderizar
-  los elementos de cada item, y debería volver un elemento DOM o
-  un string de HTML.
-
-## 6. Criterios de aceptación mínimos del proyecto
-
-### Criterios de código
-
-Con cada objetivo de aprendizaje, evaluamos que el código cumpla con algunos
-criterios. Lo cual no excluye que puedas usar otras opciones, por ejemplo
-en el caso de los selectores, proponemos el uso de `querySelector`,
-no significa que no puedes usar `querySelectorAll` o `getElementId` también.
-
-Puedes ejecutar las pruebas de cada grupo de objetivos de aprendizaje de manera
-individual con los siguientes comandos:
-
-``` sh
-npm run test:oas-html
-npm run test:oas-css
-npm run test:oas-web-api
-npm run test:oas-js
-npm run test:oas // Esto es para correr todos los tests de OAs
-```
+## 1. Studio Ghibli - Definicion de producto
 
+Este Proyecto fue creado para proporcionar Imformacion actualizada sobre las peliculas de Studio Ghibli que favorece a fans 
+de estas, nuestra pagina funciona de forma dinamica y permite interactuar con ella: 
+1 filtra por director 
+2 ordena de manera ascendente y desendente 
+3 te permite filtarr y ordenar al tiempo 
+4 calcula datos importantes como la pelicula con el mejor score, la cantidad de peliculas con puntaje mayor a 95 y un promedio de todos
+los puntajes de la historia de Studios Ghibli.
+
+
+
+![Studio Ghibli-data-to-ui](src\img\logo.png) 
+
+## 2. Historia de ususario 
+
+Esta son nuesttras Historias de usuarias creadas para 4 sprint 
+![Historia de usuaria 1](src\img\1.jpg)
+
+![Historia de usuaria 2](src\img\2.jpg)
+
+![Historia de usuaria 3](src\img\3.jpg)
+
+
+## 3. Diseño de interzas de usuario 
+Prototipo de baja fidelidad 
+
+![Prototipo de baja fidelidad 1](src\img\4.jpg)
+![Prototipo de baja fidelidad 1](src\img\5.jpg)
+![Prototipo de baja fidelidad 1](src\img\6.jpg)
+
+Prototipo de alta fidelidad
+
+![Prototipo de alta fidelidad 1](src\img\Untitled.jpg)
+
+Despues consideramos que era mejor una tarjeta de tipo Wireframe 2 para tener mejor visibilidad de informacion de las peliculas como resultado 
+obtuvimos este prototipo 
+
+![Prototipo de alta fidelidad 2](src\img\captura_de_pantalla_2023-09-18_a_la_s__16.28.18.png)
+
+
+
+## 4. Interzas de usuario
+Este es el proyecto final en el que trabajamos. 
+
+![Interfaz web](src\img\web1.jpg)
+
+  La pagina tambien es responsive 
+
+![Interfaz web](src\img\movil.jpg)
+
+
+
+  [Poyecto Data Lovers](https://github.com/)
+
+## 5. Pruebas Unitarias
+
+-La primera prueba unitaria es verificar si filterData devuelve 
+correctamente las tarjetas de la  película filtrada por director.
+
+-La segunda prueba unitaria es verificar si sortData clasifica 
+correctamente los titulos  de las películas en orden ascendente -
+descendente.
+
+-La tercera prueba unitaria es verificar si sortData clasifica 
+correctamente los titulos de las películas en orden descendente
+
+-La cuarta prueba unitaria es verificar si la Computestats calcular las 
+estadísticas correctamente usando el rt_score
+ 
 #### HTML
 
 * **Uso de HTML semántico**
