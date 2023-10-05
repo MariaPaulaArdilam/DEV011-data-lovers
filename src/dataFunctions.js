@@ -1,30 +1,19 @@
-// estas funciones son de ejemplo
-
-// export const example = () => {
-//   return 'example';
-// };
-
-// export const anotherExample = () => {
-//   return [];
-// };
-
+//Filtrado por director
 export const filterData = (data, filterBy, value) => {
   // console.log("data", data);
   // console.log("filterBy", filterBy);
-  // console.log("value", value);
-
-  
+  // console.log("value", value)
   const filter = data.filter((element) => {
     return element[filterBy] === value;
   });
   return filter;
 };
 
+//Ordenado por nombre de titulo asc-desc/desc -asc
 export const sortData = (data, sortBy, sortOrden) => {
   // console.log("data", data);
   // console.log("sortBy", sortBy);
   // console.log("sortOrden", sortOrden );
-
   const ordendata = [...data].sort((a, b) => {
     if (sortOrden === "asc") {
       if (a[sortBy] < b[sortBy]) {
@@ -48,7 +37,8 @@ export const sortData = (data, sortBy, sortOrden) => {
   return ordendata;
 };
 
-//calculo
+
+//Estadistica por Score
 export const computeStats = (data) => {
   const estadistica = data.films.reduce((total, movie) =>{
     return total + parseFloat(movie.rt_score);
