@@ -13,6 +13,7 @@ export const filterData = (data, filterBy, value) => {
   // console.log("filterBy", filterBy);
   // console.log("value", value);
 
+  
   const filter = data.filter((element) => {
     return element[filterBy] === value;
   });
@@ -65,3 +66,4 @@ export const computeStats = (data) => {
   };
 };
 //.map
+
