@@ -57,10 +57,12 @@ estadistica.addEventListener("click", () => {
 
 //Función Boton limpiar.
 const ResetBotton = document.querySelector("button[data-testid='button-clear']");
-ResetBotton.addEventListener("click", () => {
+ResetBotton.addEventListener("click", (event) => {
+  const clickedButton = event.target;
   root.innerHTML = "";
   estadistica.innerHTML="Datos";
   root.appendChild(renderItems(data.films));
 
+  
 });
 
