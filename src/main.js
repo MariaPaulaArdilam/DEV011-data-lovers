@@ -5,8 +5,6 @@ import { sortData } from "./dataFunctions.js";
 import { computeStats } from "./dataFunctions.js";
 import data from "./data/ghibli/ghibli.js";
 
-console.log(computeStats, renderItems, data);
-
 const root = document.getElementById("root");
 root.appendChild(renderItems(data.films));
 
