@@ -65,4 +65,3 @@ ResetBotton.addEventListener("click", (event) => {
 
   
 });
-
