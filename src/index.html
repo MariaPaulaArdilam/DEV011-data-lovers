@@ -1,87 +1,94 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <meta> <!--ccon el atributo viewport se utiliza para configurar cómo se debe ajustar y escalar el contenido en dispositivos móviles y es fundamental para que las Media Queries y la adaptación de tu sitio web a diferentes tamaños de pantalla funcionen correctamente
+  <head>
+    <title>DATA-LOVER</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta />
+    <!--ccon el atributo viewport se utiliza para configurar cómo se debe ajustar y escalar el contenido en dispositivos móviles y es fundamental para que las Media Queries y la adaptación de tu sitio web a diferentes tamaños de pantalla funcionen correctamente
     <title>Data Lovers</title> -->
-  <link rel="stylesheet" href="style.css" />
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-  <header>
-    <div class="logo">
-      <img src="img/LogoFinal.png" alt="StudioGhibli" class="image1" opacity="10%" -->
-    </div>
-
-    <div class="slogan">
-      <h1>「限界は 3 つあります。空、想像力、そして自分自身です。」/ “ Los límites son tres: el cielo, tu imaginación y tu misma.”
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
-      </h1>
-      <p> El viaje de Chihiro</p>
-    </div>
-
-  </header>
-  <label for="filter">Filtrar Por</label>
-
-  <select name="Filter" id="filter-select">
-    <option value="">Escoge una opción</option>
-    <option value="director">Director</option>
-    <option value="año">Año</option>
-  </select>
-
-  <label for="filter">Ordenar Por</label>
-
-  <select name="Filter" id="filter-select">
-    <option value="">Escoge una opción</option>
-    <option value="A-Z">A-Z</option>
-    <option value="Z-A">Z-A</option>
-  </select>
-
-  <button calss="top5"> Top 5</button>
-
-  <button id="clear" onclick="">Limpiar</button>
-
-  <main>
-      <div class="movie_card" id="tomb">
-        <div class="info_section">
-          <div class="movie_header">
-            <img class="locandina" src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg"/>
-            <h1>Tomb Raider</h1>
-            <h4>2018, Roar Uthaug</h4>
-            <span class="minutes">125 min</span>
-            <p class="type">Action, Fantasy</p>
-            <div class="movie_social">
-              <ul> 
-                <li class="material-icons">Personajes</li>
-                <li class="material-icons">Vehículo</li>
-                <li class="material-icons">Locación</li>
-              </ul>
-            </div>
-          </div>
-          <div class="movie_desc">
-            <p class="text">
-              Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she finds herself on the island where her father disappeared.
-            </p>
-          </div>
-        
-        </div>
-        <div class="blur_back tomb_back"></div>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="img/LogoFinal.png"
+          alt="StudioGhibli"
+          class="image1"
+          opacity="10%"
+          --
+        />
       </div>
-      
 
-  </main>
+      <div class="slogan">
+        <h1>
+          「限界は 3 つあります。空、想像力、そして自分自身です。」/ “ Los
+          límites son tres: el cielo, tu imaginación y tu misma.”
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap"
+            rel="stylesheet"
+          />
+        </h1>
+        <p>El viaje de Chihiro</p>
+      </div>
+    </header>
+    <div class="container0">
+      <label for=""></label>
+      <select data-testid="select-filter" name="Filter">
+        Director
+        <option value="">Filtrar por director</option>
+        <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+        <option value="Isao Takahata">Isao Takahata</option>
+        <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+        <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+        <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+        <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+      </select>
+      <i></i>
 
+      <label for=""></label>
 
+      <select data-testid="select-sort" name="alphabet" >
+        <option value="">Ordenar por titulo</option>
+        <option value="asc">A-Z</option>
+        <option value="desc">Z-A</option>
+      </select>
+      <i></i>
+    </div>
 
+    <div class="container">
 
+      <button id="top5" class="top-5">Datos</button>
 
+      <button data-testid="button-clear" onclick="">Limpiar</button>
+    </div>
 
-  <script src="main.js" type="module"></script>
+    <main>
 
-</body>
+      <div class="movie_card" id="root"></div>
+    </main>
 
+    <footer>
+      <div class="footer">
+        <div class="col-1">
+          <h3>María Paula Ardila - Johanna Marcela Garavito © 2023</h3>
+          <p>Data Lovers</p>
+          <p>Laboratoria</p>
+        </div>
+        <img
+          src="https://clipart-library.com/images_k/totoro-transparent-gif/totoro-transparent-gif-1.png"
+          width="7%"
+        />
+
+        <div class="col-2">
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </div>
+    </footer>
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
