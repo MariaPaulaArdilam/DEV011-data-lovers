@@ -34,8 +34,8 @@ export const renderItems = (data) => {
         <p class="description" itemprop="description">
           ${film.description}
         <p>
-        <dd itemprop="alphabet"></dd>
-      
+         <dd itemprop="alphabet"></dd>
+
       </div>
 `;
     ul.appendChild(tarjeta);
