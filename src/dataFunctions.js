@@ -1,16 +1,15 @@
-
-// Funcion filtar
-export const filterData = (data, filterBy, value) => { //filterData toma un conjunto de datos, un criterio de filtrado y un valor de comparación.
+//Filtrado por director
+export const filterData = (data, filterBy, value) => {
   // console.log("data", data);
   // console.log("filterBy", filterBy);
-  // console.log("value", value);
+  // console.log("value", value)
   const filter = data.filter((element) => {
     return element[filterBy] === value;
   });
   return filter;
 };
 
-//funcion Ordenar
+//Ordenado por nombre de titulo asc-desc/desc -asc
 export const sortData = (data, sortBy, sortOrden) => {
   // console.log("data", data);
   // console.log("sortBy", sortBy);
@@ -39,7 +38,8 @@ export const sortData = (data, sortBy, sortOrden) => {
   return ordendata;
 };
 
-//Funcion Estadistica
+
+//Estadistica por Score
 export const computeStats = (data) => {
   const estadistica = data.films.reduce((total, movie) =>{
     return total + parseFloat(movie.rt_score); //se calcula la estadística promedio de las puntuaciones 
