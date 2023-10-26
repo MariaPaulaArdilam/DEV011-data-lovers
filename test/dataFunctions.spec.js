@@ -3,7 +3,7 @@ import { sortData } from "../src/dataFunctions.js";
 import { computeStats } from "../src/dataFunctions.js";
 import { data as fakeData } from "./data.js";
 
-//Filtro por directoor
+//Filtro por director
 describe("filter Funtions", () => {
   it("returns title Castle in the Sky, My Neighbor Totoro", () => {
     const filterDirector = filterData(fakeData, "director", "Hayao Miyazaki");

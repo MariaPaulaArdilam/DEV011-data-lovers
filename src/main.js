@@ -64,3 +64,4 @@ ResetBotton.addEventListener("click", (event) => {
   estadistica.innerHTML = "Datos";
   root.appendChild(renderItems(data.films));
 });
+
